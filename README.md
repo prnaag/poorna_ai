@@ -5,11 +5,6 @@ public booking platform for hospitals in India. It pairs a **patient booking app
 (find care → compare → book → skip the queue) with a **hospital capacity dashboard**
 (live occupancy, free beds, demand-by-department, 7-day forecast).
 
-> All data is **mock/illustrative** — there is no backend or live ML model. The figures
-> are tuned to the planning deck (AIIMS Delhi: 2,084 beds, ~85% occupancy, ~5.5-day stay).
-
-Built for **Slide 10 (The Product)** and **Slide 11 (Back to Business)** of the deck.
-
 ---
 
 ## Run it locally
@@ -40,19 +35,10 @@ npm run preview      # → http://localhost:4173/poorna_ai/
 
 Use the **Patient / Hospital toggle** in the top bar to switch between the two apps.
 
-## Generate slide-ready screenshots (optional)
-
-Captures every screen to `screenshots/*.png` (needs Chromium once):
-
-```bash
-npm run preview &                     # serve the built app
-npx playwright install chromium       # one-time browser download
-npm run screenshots
-```
 
 ## Deploy / update the live site
 
-The site is hosted on **GitHub Pages** at **https://<your-username>.github.io/poorna_ai/**, served
+The site is hosted on **GitHub Pages** at **https://prnaag.github.io/poorna_ai/**, served
 from the `gh-pages` branch. After you change anything and want it live:
 
 ```bash
@@ -66,14 +52,6 @@ site (Cmd/Ctrl + Shift + R).
 > `gh-pages` / `root`. Routing uses `HashRouter` and `vite.config.js` sets `base: '/poorna_ai/'`,
 > so deep links work with no 404s. If you rename the repo, update `base` to match.
 
-## How it maps to the assignment
-
-- **Slide 10 — The Product:** the patient app + hospital dashboard, with occupancy, free
-  beds, demand-by-department, and a monthly AIIMS-Delhi forecast.
-- **Slide 11 — Back to Business:** each prediction is tied to a concrete decision with an
-  explicit **automated vs human-approved** boundary (booking slot suggestions = auto, bed
-  reallocation = human-approved, claim pre-fill = auto) — surfaced in the dashboard alerts
-  and the forecast action prompts.
 
 ## Tech
 
